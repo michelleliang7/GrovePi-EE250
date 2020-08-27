@@ -32,25 +32,25 @@ from grove_rgb_lcd import *
 is, if you run `python3 grovepi_sensors.py` in terminal, this if-statement will 
 be true"""
 if __name__ == '__main__':
-    PORT = 4    # D4
-    full_angle = 300
-    adc_ref = 5
-    grove_vcc = 5
-    potentiometer = 0
-    sensor_old = -1
-    dist_old = -1
-    dist = sensor_value = -1
-    grovepi.pinMode(potentiometer,"INPUT")
-    while True:
-        #So we do not poll the sensors too quickly which may introduce noise,
-        #sleep for a reasonable time of 200ms between each iteration.
-        time.sleep(0.2)
+	PORT = 4    # D4
+	full_angle = 300
+	adc_ref = 5
+	grove_vcc = 5
+	potentiometer = 0
+	sensor_old = -1
+	dist_old = -1
+	dist = sensor_value = -1
+	grovepi.pinMode(potentiometer,"INPUT")
+	while True:
+		#So we do not poll the sensors too quickly which may introduce noise,
+		#sleep for a reasonable time of 200ms between each iteration.
+		time.sleep(0.2)
 
-        #print(grovepi.ultrasonicRead(PORT))
+		#print(grovepi.ultrasonicRead(PORT))
 		# Read distance value from Ultrasonic
-    	try:
-        # Read distance value from Ultrasonic
-        	dist = grovepi.ultrasonicRead(PORT)
+		try:
+		# Read distance value from Ultrasonic
+			dist = grovepi.ultrasonicRead(PORT)
 	except TypeError:
 		print ("Error")
 	except IOError:
