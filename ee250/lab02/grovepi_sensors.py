@@ -24,7 +24,7 @@ sys.path.append('../../Software/Python/')
 # This append is to support importing the LCD library.
 sys.path.append('../../Software/Python/grove_rgb_lcd')
 
-import grovepi
+from grovepi import *
 from grove_rgb_lcd import *
 
 
@@ -50,7 +50,7 @@ if __name__ == '__main__':
 		# Read distance value from Ultrasonic
     	try:
         # Read distance value from Ultrasonic
-        	dist = grovepi.ultrasonicRead(ultrasonic_ranger)
+        	dist = grovepi.ultrasonicRead(PORT)
 	except TypeError:
 		print ("Error")
 	except IOError:
