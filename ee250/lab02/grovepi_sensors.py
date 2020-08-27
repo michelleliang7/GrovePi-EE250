@@ -84,7 +84,7 @@ if __name__ == '__main__':
 		# 	setText_norefresh(" OBJ PRES")
 		# else: 
 		# 	setRGB(0,255,0)
-		if sensor_value != sensor_old or dist != dist_old:
+		if (sensor_value != sensor_old) or (dist != dist_old):
 			if dist<thresh: 
 				setRGB(255,0,0) # set backlight to red
 				line1 = str(thresh)+"cm OBJ PRES"
@@ -93,6 +93,6 @@ if __name__ == '__main__':
 				setRGB(0,255,0) # set backlight to green 
 				line1 = str(thresh)+"cm"
 				setText_norefresh(line1)
-		if dist != dist_old 
+		if dist != dist_old: 
 			line2 = "\n"+str(dist)+"cm"
 			setText_norefresh(line2)
