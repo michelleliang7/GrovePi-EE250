@@ -23,7 +23,7 @@ import time
 sys.path.append('../../Software/Python/')
 # This append is to support importing the LCD library.
 sys.path.append('../../Software/Python/grove_rgb_lcd')
-
+import grovepi
 from grovepi import *
 from grove_rgb_lcd import *
 
