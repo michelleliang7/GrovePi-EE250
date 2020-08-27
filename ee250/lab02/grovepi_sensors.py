@@ -73,27 +73,26 @@ if __name__ == '__main__':
 		# Calculate threshold distance determined by potentiometer
 		thresh = round(517/300*degrees)
 
-		if sensor_value != sensor_old: 
-			line1 = str(thresh)+"cm"
-			setText_norefresh("                ")
-			setText_norefresh(line1)
-		if dist != dist_old:
-			line2 = "\n"+str(dist)+"cm"
-			setText_norefresh("                ")
-			setText_norefresh(line2)
-		if dist<thresh:
-			setRGB(255,0,0)
-			setText_norefresh(" OBJ PRES")
-		else: 
-			setRGB(0,255,0)
-		# if sensor_value != sensor_old or dist != dist_old:
-		# 	if dist<thresh: 
-		# 		setRGB(255,0,0) # set backlight to red
-		# 		line1 = str(thresh)+"cm OBJ PRES"
-		# 		setText(line1)
-		# 	else: 
-		# 		setRGB(0,255,0) # set backlight to green 
-		# 		line1 = str(thresh)+"cm"
-		# 		setText(line1)
+		# if sensor_value != sensor_old: 
+		# 	line1 = str(thresh)+"cm"
+		# 	setText_norefresh(line1)
+		# if dist != dist_old:
 		# 	line2 = "\n"+str(dist)+"cm"
 		# 	setText_norefresh(line2)
+		# if dist<thresh:
+		# 	setRGB(255,0,0)
+		# 	setText_norefresh(" OBJ PRES")
+		# else: 
+		# 	setRGB(0,255,0)
+		if sensor_value != sensor_old or dist != dist_old:
+			if dist<thresh: 
+				setRGB(255,0,0) # set backlight to red
+				line1 = str(thresh)+"cm OBJ PRES"
+				setText_norefresh(line1)
+			else: 
+				setRGB(0,255,0) # set backlight to green 
+				line1 = str(thresh)+"cm"
+				setText_norefresh(line1)
+		if dist != dist_old 
+			line2 = "\n"+str(dist)+"cm"
+			setText_norefresh(line2)
