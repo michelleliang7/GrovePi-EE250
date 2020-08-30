@@ -46,17 +46,15 @@ if __name__ == '__main__':
 		#sleep for a reasonable time of 200ms between each iteration.
 		time.sleep(0.2)
 
-		#print(grovepi.ultrasonicRead(PORT))
 		# Read distance value from Ultrasonic
 		try:
-		# Read distance value from Ultrasonic
 			dist = grovepi.ultrasonicRead(PORT)
 		except TypeError:
 			print ("Error")
 		except IOError:
 			print ("Error")
 
-			# Read sensor value from potentiometer
+		# Read sensor value from potentiometer
 		try:
 			sensor_value = grovepi.analogRead(potentiometer)
 		except KeyboardInterrupt:
@@ -73,17 +71,6 @@ if __name__ == '__main__':
 		# Calculate threshold distance determined by potentiometer
 		thresh = round(517/300*degrees)
 
-		# if sensor_value != sensor_old: 
-		# 	line1 = str(thresh)+"cm"
-		# 	setText_norefresh(line1)
-		# if dist != dist_old:
-		# 	line2 = "\n"+str(dist)+"cm"
-		# 	setText_norefresh(line2)
-		# if dist<thresh:
-		# 	setRGB(255,0,0)
-		# 	setText_norefresh(" OBJ PRES")
-		# else: 
-		# 	setRGB(0,255,0)
 		if (sensor_value != sensor_old) or (dist != dist_old):
 			if dist<thresh: 
 				setRGB(255,0,0) # set backlight to red
